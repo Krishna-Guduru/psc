@@ -35,10 +35,10 @@ h1{
 
 
 
- document.getElementById("form").addEventListener("submit",savedetail);
+ document.getElementById("form").addEventListener("submit",details);
 
 let data=JSON.parse(localStorage.getItem("StudentsData"))|| [];
-function savedetail(){
+function details(){
 event.preventDefault();
 
 var name=document.getElementById("name").value;
@@ -47,7 +47,7 @@ var unit=document.getElementById("unit").value;
 var image=document.getElementById("image").value;
 var batch=document.getElementById("batch").value;
 
-var studentobj={
+var studentsobj={
     studentname:name,
     course:course,
     unit:unit,
@@ -55,9 +55,8 @@ var studentobj={
     batch:batch
 }
 
-data.push(studentobj);
+data.push(studenstobj);
 localStorage.setItem("StudentsData",JSON.stringify(data));
-
 document.getElementById("name").value=null;
 document.getElementById("course").value=null;
 document.getElementById("unit").value=null;
